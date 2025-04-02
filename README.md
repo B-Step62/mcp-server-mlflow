@@ -1,4 +1,5 @@
 # MLflow Prompt Registry MCP Server
+[![smithery badge](https://smithery.ai/badge/@B-Step62/mcp-server-mlflow)](https://smithery.ai/server/@B-Step62/mcp-server-mlflow)
 
 Model Context Protocol (MCP) Server for [MLflow Prompt Registry](https://mlflow.org/docs/latest/prompts), enabling access to prompt templates managed in MLflow.
 
@@ -63,3 +64,11 @@ Configure Claude for Desktop by editing `claude_desktop_config.json`:
 ```
 
 Make sure to replace the `MLFLOW_TRACKING_URI` with your actual MLflow server address.
+
+### Installing via Smithery
+
+To install MLflow Prompt Registry Server for Claude Desktop automatically via [Smithery](https://smithery.ai/server/@B-Step62/mcp-server-mlflow):
+
+```bash
+npx -y @smithery/cli install @B-Step62/mcp-server-mlflow --client claude
+```
