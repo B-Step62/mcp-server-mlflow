@@ -1,0 +1,25 @@
+# Smithery configuration file: https://smithery.ai/docs/config#smitheryyaml
+
+startCommand:
+  type: stdio
+  configSchema:
+    # JSON Schema defining the configuration options for the MCP.
+    type: object
+    required: []
+    properties:
+      mlflowTrackingUri:
+        type: string
+        default: http://localhost:5000
+        description: URL to the MLflow tracking server hosting the prompt registry.
+  commandFunction:
+    # A JS function that produces the CLI command based on the given config to start the MCP on stdio.
+    |-
+    (config) => ({
+      command: 'node',
+      args: ['dist/index.js'],
+      env: {
+        MLFLOW_TRACKING_URI: config.mlflowTrackingUri
+      }
+    })
+  exampleConfig:
+    mlflowTrackingUri: http://localhost:5000
